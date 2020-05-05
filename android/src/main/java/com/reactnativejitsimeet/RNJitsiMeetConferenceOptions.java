@@ -19,7 +19,7 @@ public class RNJitsiMeetConferenceOptions implements Parcelable {
     /**
      * Server where the conference should take place.
      */
-    private URL serverURL;
+    private String serverURL;
     /**
      * Room name.
      */
@@ -60,7 +60,7 @@ public class RNJitsiMeetConferenceOptions implements Parcelable {
      * Class used to build the immutable {@link RNJitsiMeetConferenceOptions} object.
      */
     public static class Builder {
-        private URL serverURL;
+        private String serverURL;
         private String room;
         private String subject;
         private String token;
@@ -83,7 +83,7 @@ public class RNJitsiMeetConferenceOptions implements Parcelable {
          * @param url - {@link URL} of the server where the conference should take place.
          * @return - The {@link Builder} object itself so the method calls can be chained.
          */
-        public Builder setServerURL(URL url) {
+        public Builder setServerURL(String url) {
             this.serverURL = url;
 
             return this;
@@ -282,7 +282,7 @@ public class RNJitsiMeetConferenceOptions implements Parcelable {
             urlProps.putString("url", room);
         } else {
             if (serverURL != null) {
-                urlProps.putString("serverURL", serverURL.toString());
+                urlProps.putString("serverURL", serverURL);
             }
             if (room != null) {
                 urlProps.putString("room", room);

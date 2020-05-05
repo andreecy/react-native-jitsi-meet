@@ -53,17 +53,9 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
                             }
                           }
                     }
-                    
-                    URL serverURL;
-                    try {
-                        serverURL = new URL(url);
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                        throw new RuntimeException("Invalid server URL!");
-                    }
 
                     RNJitsiMeetConferenceOptions options = new RNJitsiMeetConferenceOptions.Builder()
-                            .setServerURL(serverURL)
+                            .setServerURL(url)
                             .setRoom(roomName)
                             .setAudioOnly(false)//.setUserInfo(_userInfo)
                             .setToken(token)
