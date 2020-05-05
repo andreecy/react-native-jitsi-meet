@@ -32,7 +32,7 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void call(String url, String roomName, ReadableMap userInfo, String token) {
+    public void call(URL url, String roomName, ReadableMap userInfo, String token) {
         UiThreadUtil.runOnUiThread(new Runnable() {
             @Override
             public void run() {
