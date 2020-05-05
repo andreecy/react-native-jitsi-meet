@@ -83,8 +83,8 @@ public class RNJitsiMeetConferenceOptions implements Parcelable {
          * @param url - {@link URL} of the server where the conference should take place.
          * @return - The {@link Builder} object itself so the method calls can be chained.
          */
-        public Builder setServerURL(URL url) {
-            this.serverURL = url;
+        public Builder setServerURL(String url) {
+            this.serverURL = new URL(url);
 
             return this;
         }
